@@ -1,19 +1,20 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../assets/others/cupcake.gif";
+import logo from "../../assets/home/logoMain.png";
 
 const Navbar = () => {
   const navlinks = (
-    <div className="text-orange-500">
-      <NavLink to="/" className="mr-2 text-xl">
+    <div className="text-orange-500 flex">
+      <NavLink to="/" className="mr-2 relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-orange-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ">
         Home
       </NavLink>
-      <NavLink to="/menu" className="mr-2 text-xl">
+      <NavLink to="/menu" className="mr-2 relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-orange-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ">
         Menu
       </NavLink>
-      <NavLink to="/about" className="mr-2 text-xl">
-        About
+      <NavLink to="/orderFood/salad" className="mr-2 relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-orange-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ">
+        Order
       </NavLink>
+     
     </div>
   );
   return (
@@ -30,14 +31,18 @@ const Navbar = () => {
           </ul>
         </div>
         <Link>
-          <img className=" w-20 h-20" src={logo} alt="" />
+          <img className=" w-20 h-20 hover:scale-125 transition-all duration-500 cursor-pointer" src={logo} alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navlinks}</ul>
       </div>
-      <div className="navbar-end">
-        <button className="btn btn-outline btn-warning">Buy Now</button>
+      <div className="navbar-end flex">
+        
+        <NavLink to="/login" className="mr-2 relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-orange-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ">
+        Login
+      </NavLink>
+      <button className="btn btn-outline btn-warning ml-3">Buy Now</button>
       </div>
     </div>
   );
