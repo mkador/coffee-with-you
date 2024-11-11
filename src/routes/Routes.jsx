@@ -16,7 +16,6 @@ import AdminRoute from './AdminRoute';
 import UpdateItem from '../pages/Dashboard/Updateitem/UpdateItem';
 import Payment from '../pages/Dashboard/Payment/Payment';
 
-
 export const route = createBrowserRouter([
   {
     path: '/',
@@ -66,7 +65,7 @@ export const route = createBrowserRouter([
       },
       {
         path: '/dashboard/payment',
-        element: <Payment/>
+        element: <Payment />,
       },
       //Admin routes
       {
@@ -93,7 +92,7 @@ export const route = createBrowserRouter([
           </AdminRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/menu/${params.id}`),
+          fetch(`https://coffee-with-you-server.vercel.app/menu/${params.id}`),
       },
       {
         path: '/dashboard/manageItems',
